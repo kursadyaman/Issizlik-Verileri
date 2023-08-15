@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Türkiye'nin Son On Yıllık İşsizlik Verileri</title>
+<style>
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.chart {
+  width: 100%;
+  height: 500px;
+}
+
+.axis {
+  font-size: 12px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.label {
+  font-size: 14px;
+}
+</style>
+</head>
+<body>
+
+<div class="chart">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+  <canvas id="myChart"></canvas>
+</div>
+
+<script>
+var chart = new Chart(document.getElementById("myChart"), {
+  type: "line",
+  data: {
+    labels: [2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022],
+    datasets: [{
+      label: "İşsizlik Oranı",
+      data: [11.2, 11.4, 10.9, 10.6, 10.1, 10.0, 9.8, 13.3, 12.1, 10.8],
+      fill: false,
+      lineTension: 0.1,
+      borderColor: "red",
+      borderWidth: 2,
+    }]
+  },
+  options: {
+    scales: {
+      xAxis: {
+        title: {
+          text: "Yıl",
+          fontStyle: "bold",
+          fontSize: 12,
+        },
+        gridLines: {
+          color: "lightgray",
+          tickMarkLength: 5,
+        },
+      },
+      yAxis: {
+        title: {
+          text: "İşsizlik Oranı",
+          fontStyle: "bold",
+          fontSize: 12,
+        },
+        gridLines: {
+          color: "lightgray",
+          tickMarkLength: 5,
+        },
+      },
+    },
+    legend: {
+      display: false,
+    },
+  },
+});
+</script>
+
+</body>
+</html>
